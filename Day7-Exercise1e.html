@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>XML HTTP Request Example</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Day7-Exercise1.e</h1>
+    <p>Print the country that uses US dollars as currency</p>
+
+    <script>
+        const apiUrl = 'https://restcountries.com/v3.1/all';
+
+        fetch(apiUrl)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.filter(country => country.currencies?.USD));
+            //or we can also go with, console.log(data.filter(country => country.currencies && country.currencies.USD));
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>XML HTTP Request Example</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Day7-Exercise1.b</h1>
+    <p>Get all the countries with a population of less than 2 lakhs using Filter function</p>
+
+    <script>
+        const apiUrl = 'https://restcountries.com/v3.1/all';
+
+        fetch(apiUrl)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log('Countries with population less than 2 lakhs', data.filter(country => country.population < 200000));
+        });
+
+    </script>
+</body>
+
+</html>

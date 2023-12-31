@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>XML HTTP Request Example</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Day7-Exercise1.c</h1>
+    <p>Print the following details name, capital, flag, using forEach function</p>
+
+    <script>
+        const apiUrl = 'https://restcountries.com/v3.1/all';
+
+        fetch(apiUrl)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(country => {
+                console.log('Name: ', country.name.common);
+                console.log('Capital: ', country.capital);
+                console.log('Flag: ', country.flag);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
